@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         //get the sign in button
-        googleSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        googleSignInButton = findViewById(R.id.sign_in_button);
 
         //listen to sign in button click
         googleSignInButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Signed in successfully, send authenticated UI.
             //        //get user data from account
+
+
             String image = "", name = "", email = "";
             if (account.getPhotoUrl() != null)
                 image = account.getPhotoUrl().toString();
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("MY_APP", "signInResult:failed code=" + e.getStatusCode());
-            ;
+
         }
     }
 }
